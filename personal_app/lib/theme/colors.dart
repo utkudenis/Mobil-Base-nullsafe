@@ -1,0 +1,43 @@
+import 'package:flutter/material.dart';
+
+class CustomColors {
+  static const oneFill01Primary04Blue70 = const Color(0xff2b6cb0);
+  static const blue70 = const Color(0xff2b6cb0);
+  static const blue80 = const Color(0xff2c5282);
+  static const blue90 = const Color(0xff2a4365);
+  static const blue60 = const Color(0xff3182ce);
+  static const blue40 = const Color(0xff90cdf4);
+  static const blue30 = const Color(0xffb1dcf7);
+  static const blue20 = const Color(0xffbee3f8);
+  static const blue10 = const Color(0xffebf8ff);
+  static const blue50Default = const Color(0xff0099e8);
+  static const orange20 = const Color(0xfffdf0e0);
+  static const purple20 = const Color(0xfff5f4fe);
+  static const green20 = const Color(0xffd4f3df);
+  static const red20 = const Color(0xfffce6e8);
+  static const orange50 = const Color(0xfff08700);
+  static const purple50 = const Color(0xff735ff0);
+  static const green50 = const Color(0xff1ebe55);
+  static const red50 = const Color(0xffe63746);
+  static const logo40 = const Color(0xff60bddd);
+  static const logo90 = const Color(0xff0f3c4c);
+  static const logo30 = const Color(0xff95d3e8);
+  static const logo80 = const Color(0xff16566d);
+  static const logo20 = const Color(0xffcae9f4);
+  static const logo70 = const Color(0xff1c6b86);
+  static const logo10 = const Color(0xffeef8fb);
+  static const logo60 = const Color(0xff248cb1);
+  static const logo50 = const Color(0xff2ca8d3);
+  static const white = const Color(0xffffffff);
+  static const gray70 = const Color(0xff4a5568);
+  static const gray80 = const Color(0xff2d3748);
+  static const gray90 = const Color(0xff1a202c);
+  static const gray60 = const Color(0xff718096);
+  static const gray40 = const Color(0xffccd7e2);
+  static const gray30Disabled = const Color(0xffe2e8f0);
+  static const gray20 = const Color(0xffedf2f7);
+  static const gray10 = const Color(0xfff7fafc);
+  static const gray50 = const Color(0xffa0aec0);
+  static const color01PrimaryBlueBlue50 = const Color(0xff4299e1);
+  static const colors01PrimaryGradientEndColor = const Color(0xff48bb79);
+}

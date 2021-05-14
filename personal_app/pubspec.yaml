@@ -48,6 +48,19 @@ dependencies:
   #gets unique device ID
   device_info: ^2.0.0
 
+  #Toast Messages
+  fluttertoast: ^8.0.6
+
+  #lottie animations
+  lottie: ^1.0.1
+
+  #image picker ant croper
+  image_picker: ^0.7.5
+  image_cropper: ^1.4.0
+
+  #open a web url
+  url_launcher: ^6.0.3
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

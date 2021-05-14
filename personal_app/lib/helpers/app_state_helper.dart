@@ -9,10 +9,12 @@ import '../environment/environment.dart';
 import '../services/navigation/navigation_service.dart';
 // Helpers
 import 'SharedPreferences/shared_preferences_helper.dart';
-import 'application_file_system.helper.dart';
+import 'application_file_system_helper.dart';
 import 'auth_helper.dart';
 
 class AppStateHelper {
+   // this static values are ateended on start the app
+  static BuildContext appContext;
   static NavigationService navigationService;
   static bool isApplicationAcitve = true;
   static bool isCameraOrGalleryActive = false;

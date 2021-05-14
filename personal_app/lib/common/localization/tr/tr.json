@@ -1,4 +1,13 @@
 {
   "home_page": "Ana Sayfa",
-  "whatsappNotInstalledError": "Cihazınızda WhatsApp yüklü değil."
+  "whatsappNotInstalledError": "Cihazınızda WhatsApp yüklü değil.",
+  "this_week": "Bu hafta",
+  "last_week": "Geçen hafta",
+  "older": "Daha eski",
+  "hour_ago": "1 saat önce",
+  "hours_ago": "saat önce",
+  "minute_ago": "1 dakika önce",
+  "minutes_ago": "dakika önce",
+  "now": "Şimdi",
+  "image_picker_done_button_title": "Bitti"
 }

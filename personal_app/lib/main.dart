@@ -134,6 +134,7 @@ class _AppState extends State<App> with WidgetsBindingObserver {
         builder: (context, state) {
           var store = StoreProvider.of<AppState>(context);
           ReduxStore.currentStore = store;
+          AppStateHelper.appContext = context;
 
           return MaterialApp(
             navigatorKey: AppStateHelper.navigationService.navigatorKey,

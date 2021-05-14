@@ -1,5 +1,15 @@
 {
   "home_page": "Home Page",
-  "whatsappNotInstalledError": "WhatsApp is not installed."
+  "whatsappNotInstalledError": "WhatsApp is not installed.",
+  "this_week": "This week",
+  "last_week": "Last week",
+  "older": "Older",
+  "hour_ago": "An hour ago",
+  "hours_ago": "hours ago",
+  "minute_ago": "a minute ago",
+  "minutes_ago": "minutes ago",
+  "now": "Now",
+  "your_manager": "Your Manager",
+  "image_picker_done_button_title": "Bitti"
   
 }

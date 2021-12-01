@@ -21,7 +21,7 @@ class StringHelper{
     return (updatedName.trimLeft());
   }
 
-  // Gets String and makes first letter Uppercase
+   //Gets String and makes first letter Uppercase
   static String capitalizeString(String string) {
     if (string == null) return "";
     String updatedName = "";
@@ -34,10 +34,5 @@ class StringHelper{
     }
     return (updatedName.trimLeft());
   }
-
-  static int getTextLines(String text) {
-    return '\n'.allMatches(text).length;
-  }
-
 
 }

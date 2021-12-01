@@ -15,7 +15,6 @@ import 'common/routes/custom_router.dart';
 import 'common/routes/route_names.dart';
 import 'helpers/app_state_helper.dart';
 import 'redux/app_state.dart';
-import 'services/navigation/navigation_service.dart';
 import 'theme/styles.dart';
 
 void main() async {
@@ -75,7 +74,7 @@ class _AppState extends State<App> with WidgetsBindingObserver {
   @override
   void initState() {
     super.initState();
-    AppStateHelper.navigationService = locator<NavigationService>();
+
     WidgetsBinding.instance.addObserver(this);
     setCurrentValues();
     //CommonHelper.navigationService = locator<NavigationService>();
@@ -140,7 +139,7 @@ class _AppState extends State<App> with WidgetsBindingObserver {
           return MaterialApp(
             navigatorKey: AppStateHelper.navigationService.navigatorKey,
             debugShowCheckedModeBanner: false,
-            title: Configuration.environment == EnumsEnvironment.Test ? "Personal App Test" : "Personal App",
+            title: Configuration.environment == EnumsEnvironment.Test ? "Koç Diyalog Test" : "Koç Diyalog",
             theme: basicTheme(),
             localizationsDelegates: [
               Localization.delegete,

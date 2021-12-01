@@ -51,7 +51,7 @@ class _CustomToastMessageState extends State<CustomToastMessage> with TickerProv
       margin: EdgeInsets.only(right: 10),
       decoration: BoxDecoration(shape: BoxShape.circle, color: CustomColors.white, border: Border.all(width: 2, color: CustomColors.white)),
       child: imageAsset(
-        "assets/icons/iconCheck@3x.png",
+        "assets/icons/20-check@3x.png",
         scale: 0.8,
         color: CustomColors.gray90,
       ),
@@ -137,7 +137,7 @@ class _CustomToastMessageState extends State<CustomToastMessage> with TickerProv
                       height: 14,
                       width: 14,
                       child: Lottie.asset(
-                        'assets/jsons/loader.json',
+                        'assets/gifs/jsons/loader.json',
                         controller: _controller,
                         onLoaded: (composition) {
                           // Configure the AnimationController with the duration of the

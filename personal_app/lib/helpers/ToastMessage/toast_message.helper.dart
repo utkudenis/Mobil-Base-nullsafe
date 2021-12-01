@@ -20,7 +20,7 @@ class ToastMessageHelper {
       margin: EdgeInsets.only(right: 5),
       decoration: BoxDecoration(shape: BoxShape.circle, color: ApmColors.white, border: Border.all(width: 2, color: ApmColors.white)),
       child: imageAsset(
-        "assets/icons/iconCheck@3x.png",
+        "assets/icons/20-check@3x.png",
         scale: 0.8,
         color: ApmColors.gray90,
       ),

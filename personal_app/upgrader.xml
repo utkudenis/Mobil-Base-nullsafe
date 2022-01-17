@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
     <channel>
-        <title>Debt Now App - Appcast</title>
+        <title>Falsepeti Update</title>
         <item>
-            <title>Version 1.15.0</title>
-            <description>Minor updates and improvements.</description>
-            <pubDate>Sun, 30 Dec 2018 12:00:00 +0000</pubDate>
-            <enclosure url="https://play.google.com/store/apps/details?id=com.moonwink.treasury" sparkle:version="1.15.0" sparkle:os="android" />
+            <title>Version 1.1.0</title>
+            <description>Minor updates and improvements Android.</description>
+            <pubDate>Tue, 18 Jun 2022 12:00:00 +0000</pubDate>
+            <enclosure url="https://play.google.com/store/apps/details?id=com.falsepeti.falsepeti" sparkle:version="1.1.0" sparkle:os="android" />
         </item>
         <item>
-            <title>Version 1.15.0</title>
-            <description>Minor updates and improvements.</description>
-            <pubDate>Sun, 30 Dec 2018 12:00:00 +0000</pubDate>
-            <enclosure url="https://play.google.com/store/apps/details?id=com.moonwink.treasury" sparkle:version="1.15.0" sparkle:os="iOS" />
+            <title>Version 1.1.0</title>
+            <description>Minor updates and improvements iOS.</description>
+            <pubDate>Tue, 18 Jun 2022 12:00:00 +0000</pubDate>
+            <enclosure url="https://apps.apple.com/us/app/fal-sepeti-uzman-falc%C4%B1lar/id1177421727" sparkle:version="1.1.0" sparkle:os="iOS" />
         </item>
     </channel>
 </rss>

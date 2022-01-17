@@ -3,14 +3,14 @@
     <channel>
         <title>Falsepeti Update</title>
         <item>
-            <title>Version 1.1.0</title>
+            <title>Version 1.0.0</title>
             <description>Ödeme sistemlerindeki sorunlar çözüldü</description>
             <pubDate>Tue, 18 Jun 2022 12:00:00 +0000</pubDate>
             <enclosure url="https://play.google.com/store/apps/details?id=com.falsepeti.falsepeti" sparkle:version="1.1.0" sparkle:os="android" />
             <sparkle:minimumSystemVersion>1.1.0</sparkle:minimumSystemVersion>
         </item>
         <item>
-            <title>Version 1.1.0</title>
+            <title>Version 1.0.0</title>
             <description>Minor updates and improvements iOS.</description>
             <pubDate>Tue, 18 Jun 2022 12:00:00 +0000</pubDate>
             <enclosure url="https://apps.apple.com/us/app/fal-sepeti-uzman-falc%C4%B1lar/id1177421727" sparkle:version="1.1.0" sparkle:os="iOS" />

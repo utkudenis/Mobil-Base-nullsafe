@@ -7,7 +7,6 @@
             <description>Ödeme sistemlerindeki sorunlar çözüldü</description>
             <pubDate>Tue, 18 Jun 2022 12:00:00 +0000</pubDate>
             <enclosure url="https://play.google.com/store/apps/details?id=com.falsepeti.falsepeti" sparkle:version="1.1.0" sparkle:os="android" />
-            <sparkle:tags> <sparkle:criticalUpdate /> </sparkle:tags> 
         </item>
         <item>
             <title>Version 1.1.0</title>

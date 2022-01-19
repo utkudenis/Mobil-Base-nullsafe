@@ -12,8 +12,7 @@
             <title>Version 1.1.0</title>
             <description>Minor updates and improvements iOS.</description>
             <pubDate>Tue, 18 Jun 2022 12:00:00 +0000</pubDate>
-            <enclosure url="https://apps.apple.com/us/app/fal-sepeti-uzman-falc%C4%B1lar/id1177421727" sparkle:version="2.6.0" sparkle:os="iOS" />
-            <sparkle:tags> <sparkle:criticalUpdate /> </sparkle:tags> 
+            <enclosure url="https://apps.apple.com/us/app/fal-sepeti-uzman-falc%C4%B1lar/id1177421727" sparkle:version="2.6.0" sparkle:os="iOS" />           
         </item>
     </channel>
 </rss>

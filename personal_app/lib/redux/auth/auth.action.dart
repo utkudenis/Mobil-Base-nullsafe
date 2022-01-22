@@ -1,5 +1,4 @@
 // Packages
-import 'package:meta/meta.dart';
 import 'package:redux/redux.dart';
 import 'package:redux_thunk/redux_thunk.dart';
 // Models
@@ -16,22 +15,20 @@ import '../app_state.dart';
 
 ThunkAction<AppState> setUserAuthAction = (Store<AppState> store) async {
   // Get Cookie and User Id from Shared Preferences
- // final userId = await SharedPreferencesHelper.getString(SharedPreferencesKeys.userId);
+  // final userId = await SharedPreferencesHelper.getString(SharedPreferencesKeys.userId);
   //final cookie = await SharedPreferencesHelper.getString(SharedPreferencesKeys.ssoLoginCookies);
   final auth = new AuthModel(
-   userId: "userId",
+    userId: "userId",
     cookie: "cookie",
   );
 
   // Set Auth Data into State
   await store.dispatch(SetUserAuthAction(auth: auth));
-
-
 };
 
 class SetUserAuthAction {
   final AuthModel auth;
   SetUserAuthAction({
-    @required this.auth,
+    required this.auth,
   });
 }

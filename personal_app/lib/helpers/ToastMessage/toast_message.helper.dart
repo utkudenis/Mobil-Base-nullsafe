@@ -34,12 +34,12 @@ class ToastMessageHelper {
     int notificationDuration = 3,
     int cancelableDuration = 5,
     bool cancelable = false,
-    Widget icon,
+    required Widget icon,
     bool iconCheck = false,
-    Widget notificationContent,
+    required Widget notificationContent,
     ToastGravity toastGravity = ToastGravity.BOTTOM,
     bool notification = false,
-    FToast notificationToast,
+    required FToast notificationToast,
   }) {
     final fToast = createFToast(context);
     Widget toastContent = notification

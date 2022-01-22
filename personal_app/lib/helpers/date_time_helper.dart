@@ -81,13 +81,7 @@ class DateTimeHelper {
     /**
      * eğer bildirimin oluşturulma saati bugün ile aynı günse saat olarak göster
      * bildirim saati ile şuanki saat farkı hesaplanıp kaç saat önce olduğu yazdırılacak.
-     * değilse oluşturulma saati ile şuanki saat farkı 24 saatten fazlaysa dün yazdırıcak 
-     * 
-     * değilse tarih olarak gösterilecek
-     * 
-     * 
-     * 
-     * PSEUDO CODE
+     * değilse oluşturulma saati ile şuanki saat farkı 24 saatten fazlaysa dün yazdırıcak  değilse tarih olarak gösterilecek
      * eğer mesajın yaratılma tarıhı bugün ıse
      *    eğer saat farkı 0'dan farklı ise
      *        şu kadar saat önce
@@ -150,6 +144,4 @@ class DateTimeHelper {
       return dateFormat.format(localDate);
     }
   }
-
-  
 }

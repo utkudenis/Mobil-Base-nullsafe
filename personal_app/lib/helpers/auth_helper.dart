@@ -3,10 +3,7 @@ import 'dart:io';
 
 import 'log_helper.dart';
 
-
-class AuthHelper{
-
-
+class AuthHelper {
   /// Makes api call to delete all data about user (notification, cookies, etc.).
   static Future<void> deleteDeviceFromServer() async {
     try {
@@ -17,7 +14,7 @@ class AuthHelper{
       //await NotificationHubApi().apiV1NotificationHubDeleteDevice(deviceId);
       //await NotificationDeviceRegisterationService().deregisterNotificationHub();
     } catch (e) {
-      LogHelper.logException('apm_logout_approve_action_sheet.dart', 'deleteDevice', e);
+      LogHelper.logError('apm_logout_approve_action_sheet.dart', 'deleteDevice', e.toString());
     }
   }
 
@@ -32,8 +29,4 @@ class AuthHelper{
       return androidDeviceInfo.androidId; // unique ID on Android
     }
   }
-
-
-
-
 }

@@ -19,15 +19,21 @@ class CustomToastMessage extends StatefulWidget {
   final bool iconCheck;
   final bool cancelable;
 
-
-  CustomToastMessage(this.fToast, {this.title = '', this.message = '', this.icon, this.iconCheck = false, this.cancelable = false});
+  CustomToastMessage(this.fToast, {this.title = '', this.message = '', required this.icon, this.iconCheck = false, this.cancelable = false});
 
   @override
   _CustomToastMessageState createState() => _CustomToastMessageState();
 }
 
+Widget checkIcon = Container(
+  height: 20,
+  margin: EdgeInsets.only(right: 10),
+  decoration: BoxDecoration(shape: BoxShape.circle, color: CustomColors.white, border: Border.all(width: 2, color: CustomColors.white)),
+  child: imageAsset("assets/icons/20-check@3x.png", scale: 0.8, color: CustomColors.gray90, width: 24, height: 24),
+);
+
 class _CustomToastMessageState extends State<CustomToastMessage> with TickerProviderStateMixin {
-  AnimationController _controller;
+  late AnimationController _controller;
 
   @override
   void initState() {
@@ -44,18 +50,7 @@ class _CustomToastMessageState extends State<CustomToastMessage> with TickerProv
 
   @override
   Widget build(BuildContext context) {
-   
     double screenWidth = MediaQuery.of(context).size.width;
-    Widget checkIcon = Container(
-      height: 20,
-      margin: EdgeInsets.only(right: 10),
-      decoration: BoxDecoration(shape: BoxShape.circle, color: CustomColors.white, border: Border.all(width: 2, color: CustomColors.white)),
-      child: imageAsset(
-        "assets/icons/20-check@3x.png",
-        scale: 0.8,
-        color: CustomColors.gray90,
-      ),
-    );
 
     return Container(
       width: screenWidth,
@@ -71,11 +66,7 @@ class _CustomToastMessageState extends State<CustomToastMessage> with TickerProv
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              widget.icon == null
-                  ? widget.iconCheck
-                      ? checkIcon
-                      : SizedBox()
-                  : widget.icon,
+              widget.iconCheck ? widget.icon : SizedBox(),
               Expanded(
                 child: Text(
                   widget.title,
@@ -128,7 +119,7 @@ class _CustomToastMessageState extends State<CustomToastMessage> with TickerProv
                         style: customMediumTextStyle(CustomColors.blue50Default, fontSize: 14.0, height: 20.0 / 14.0),
                       ),
                       onTap: () {
-                       // Do your Action !!
+                        // Do your Action !!
                         widget.fToast.removeCustomToast();
                         widget.fToast.removeQueuedCustomToasts();
                       },

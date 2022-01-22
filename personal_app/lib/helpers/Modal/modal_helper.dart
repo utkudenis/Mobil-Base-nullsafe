@@ -21,24 +21,24 @@ class PointerBool {
 class ModalHelper {
   static void showBottomModal(
     BuildContext context, {
-    Widget content,
-    Widget contentText,
-    String title,
+    Widget? content,
+    Widget? contentText,
+    String? title,
     double horizontalPadding = 20,
-    Widget text,
-    ShapeBorder shape,
-    Function onClose,
+    Widget? text,
+    ShapeBorder? shape,
+    Function? onClose,
     bool enableTextArea = false,
-    String textAreaText,
-    String textAreaHintText,
-    TextAreaController textAreaController,
-    Function(String value) onTextAreaChanged,
+    required String textAreaText,
+    String? textAreaHintText,
+    required TextAreaController textAreaController,
+    Function(String value)? onTextAreaChanged,
     bool enableSaveAndCancelButtons = false,
     int minLines = 2,
     int maxLines = 3,
-    Function onCancel,
-    Function onSave,
-    double height,
+    Function? onCancel,
+    Function? onSave,
+    required double height,
   }) {
     showModalBottomSheet(
             isScrollControlled: true,
@@ -50,7 +50,6 @@ class ModalHelper {
                   child: ModalBottom(
                     height: height,
                     title: title,
-                    shape: shape,
                     text: text,
                     content: content,
                     contentText: contentText,
@@ -96,10 +95,10 @@ class ModalHelper {
     String contextTextBottom = "bottom Text",
     ButtonOrder buttonOrder = ButtonOrder.vertical,
     bool enableFirstButton = false,
-    Function onFirstButtonClick,
-    String firstButtonText,
-    Widget icon,
-    Function onClose,
+    Function? onFirstButtonClick,
+    String? firstButtonText,
+    required Widget icon,
+    Function? onClose,
   }) {
     showGeneralDialog(
         barrierColor: Colors.black.withOpacity(0.5),
@@ -186,7 +185,7 @@ class ModalHelper {
                                                 )
                                               : Container(),
                                         ),
-                                        style: ButtonStyle( backgroundColor: MaterialStateProperty.all<Color>(color)),
+                                        style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(color)),
                                         onPressed: () {
                                           if (onFirstButtonClick != null) {
                                             onFirstButtonClick();
@@ -226,23 +225,23 @@ class ModalHelper {
   }
 
   static void showModalDialog(BuildContext context,
-      {String title,
+      {String? title,
       Color color = CustomColors.blue50Default,
       Color borderColor = CustomColors.blue50Default,
-      String contentText,
+      String? contentText,
       ButtonOrder buttonOrder = ButtonOrder.vertical,
       bool enableFirstButton = false,
       bool enableSecondButton = false,
-      PointerBool checkBoxValue,
-      Function onFirstButtonClick,
-      Function onSecondButtonClick,
-      String firstButtonText,
+      PointerBool? checkBoxValue,
+      Function? onFirstButtonClick,
+      Function? onSecondButtonClick,
+      String? firstButtonText,
       Color firstButtonTextColor = CustomColors.white,
       Color secondButtonTextColor = CustomColors.blue50Default,
-      String secondButtonText,
-      Widget icon,
-      Widget checkBoxText,
-      Function onClose}) {
+      String? secondButtonText,
+      Widget? icon,
+      Widget? checkBoxText,
+      Function? onClose}) {
     showGeneralDialog(
         barrierColor: Colors.black.withOpacity(0.5),
         transitionBuilder: (context, a1, a2, widget) {
@@ -296,12 +295,12 @@ class ModalHelper {
                               checkBoxText != null
                                   ? Row(children: [
                                       Checkbox(
-                                        value: checkBoxValue.dropOkr,
+                                        value: checkBoxValue!.dropOkr,
                                         activeColor: CustomColors.blue50Default,
-                                        onChanged: (bool newValue) {
+                                        onChanged: (bool? newValue) {
                                           // print("New Value = " + newValue.toString());
                                           setState(() {
-                                            checkBoxValue.dropOkr = newValue;
+                                            checkBoxValue.dropOkr = newValue!;
                                           });
                                           // print("state.checkBoxValue value 1. = " + checkBoxValue.dropOkr.toString());
                                         },
@@ -332,7 +331,7 @@ class ModalHelper {
                                                 )
                                               : Container(),
                                         ),
-                                        style: ButtonStyle( backgroundColor: MaterialStateProperty.all<Color>(color)),
+                                        style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(color)),
                                         onPressed: () {
                                           if (onFirstButtonClick != null) {
                                             onFirstButtonClick();
@@ -361,7 +360,7 @@ class ModalHelper {
                                                 )
                                               : Container(),
                                         ),
-                                        style: ButtonStyle( backgroundColor: MaterialStateProperty.all<Color>(CustomColors.white)),
+                                        style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(CustomColors.white)),
                                         onPressed: () {
                                           // Navigator.pop(context, showBottomModal);
                                           if (onSecondButtonClick != null) {

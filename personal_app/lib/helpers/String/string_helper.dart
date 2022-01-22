@@ -1,10 +1,6 @@
-
-
-
-class StringHelper{
-
+class StringHelper {
   //Gets String and makes first letter Uppercase
-  static String capitalizeStringWithoutAddingEmptySpaceToTheEnd(String string) {
+  static String capitalizeStringWithoutAddingEmptySpaceToTheEnd(String? string) {
     if (string == null) return "";
     String updatedName = "";
     var wordsInName = string.split(" ");
@@ -21,8 +17,8 @@ class StringHelper{
     return (updatedName.trimLeft());
   }
 
-   //Gets String and makes first letter Uppercase
-  static String capitalizeString(String string) {
+  //Gets String and makes first letter Uppercase
+  static String capitalizeString(String? string) {
     if (string == null) return "";
     String updatedName = "";
     var wordsInName = string.split(" ");
@@ -34,5 +30,4 @@ class StringHelper{
     }
     return (updatedName.trimLeft());
   }
-
 }

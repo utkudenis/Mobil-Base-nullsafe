@@ -14,22 +14,22 @@ enum ButtonOrder { vertical, horizontal }
 class ModalHelperStaticFullHeight {
   static void showBottomModal(
     BuildContext context, {
-    Widget content,
-    String title,
+    required Widget content,
+    required String title,
     double horizontalPadding = 20,
-    Widget text,
-    Function onClose,
+    required Widget text,
+    required Function onClose,
     bool enableTextArea = false,
-    String textAreaText,
-    String textAreaHintText,
-    TextAreaController textAreaController,
-    Function(String value) onTextAreaChanged,
+    required String textAreaText,
+    required String textAreaHintText,
+    required TextAreaController textAreaController,
+    required Function(String value) onTextAreaChanged,
     bool enableSaveAndCancelButtons = false,
     int minLines = 2,
     int maxLines = 3,
-    Function onCancel,
-    Function onSave,
-    double height,
+    required Function onCancel,
+    required Function onSave,
+    required double height,
   }) {
     showModalBottomSheet(
             isScrollControlled: true,
@@ -62,9 +62,7 @@ class ModalHelperStaticFullHeight {
             },
             context: context)
         .then((value) {
-      if (onClose != null) {
-        onClose();
-      }
+      onClose();
     });
   }
 
@@ -73,17 +71,17 @@ class ModalHelperStaticFullHeight {
   }
 
   static void showModalDialog(BuildContext context,
-      {String title,
+      {required String title,
       Color color = CustomColors.blue50Default,
-      String contentText,
+      required String contentText,
       ButtonOrder buttonOrder = ButtonOrder.vertical,
       bool enableFirstButton = false,
       bool enableSecondButton = false,
-      Function onFirstButtonClick,
-      Function onSecondButtonClick,
-      String firstButtonText,
-      String secondButtonText,
-      Function onClose}) {
+      required Function onFirstButtonClick,
+      required Function onSecondButtonClick,
+      required String firstButtonText,
+      required String secondButtonText,
+      required Function onClose}) {
     showGeneralDialog(
         barrierColor: Colors.black.withOpacity(0.5),
         transitionBuilder: (context, a1, a2, widget) {
@@ -96,7 +94,7 @@ class ModalHelperStaticFullHeight {
                 children: [
                   AlertDialog(
                     shape: OutlineInputBorder(borderRadius: BorderRadius.circular(8.0)),
-                    title: title != null
+                    title: title != ""
                         ? Text(
                             title,
                             style: customShowDialogTitleTextStyle(),
@@ -105,7 +103,7 @@ class ModalHelperStaticFullHeight {
                         : Container(),
                     content: Column(
                       children: [
-                        (contentText != null
+                        (contentText != ""
                             ? Text(
                                 contentText,
                                 style: customShowDialogContentTextStyle(),
@@ -125,7 +123,7 @@ class ModalHelperStaticFullHeight {
                                     ),
                                     child: ElevatedButton(
                                       child: Center(
-                                        child: firstButtonText != null
+                                        child: firstButtonText != ""
                                             ? Text(
                                                 firstButtonText,
                                                 // localize(context, 'Confirm'),
@@ -133,11 +131,9 @@ class ModalHelperStaticFullHeight {
                                               )
                                             : Container(),
                                       ),
-                                      style: ButtonStyle( backgroundColor: MaterialStateProperty.all<Color>(color)),
+                                      style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(color)),
                                       onPressed: () {
-                                        if (onFirstButtonClick != null) {
-                                          onFirstButtonClick();
-                                        }
+                                        onFirstButtonClick();
                                       },
                                     ),
                                   )
@@ -154,7 +150,7 @@ class ModalHelperStaticFullHeight {
                                     ),
                                     child: ElevatedButton(
                                       child: Center(
-                                        child: secondButtonText != null
+                                        child: secondButtonText != ""
                                             ? Text(
                                                 // localize(context, 'Cancel'),
                                                 secondButtonText,
@@ -162,12 +158,11 @@ class ModalHelperStaticFullHeight {
                                               )
                                             : Container(),
                                       ),
-                                      style: ButtonStyle( backgroundColor: MaterialStateProperty.all<Color>(color)),
+                                      style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(color)),
                                       onPressed: () {
                                         // Navigator.pop(context, showBottomModal);
-                                        if (onSecondButtonClick != null) {
-                                          onSecondButtonClick();
-                                        }
+
+                                        onSecondButtonClick();
                                       },
                                     ),
                                   )
@@ -189,9 +184,7 @@ class ModalHelperStaticFullHeight {
         pageBuilder: (context, animation1, animation2) {
           return Container();
         }).then((value) {
-      if (onClose != null) {
-        onClose();
-      }
+      onClose();
     });
   }
 }

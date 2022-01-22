@@ -7,7 +7,7 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:personal_app/helpers/log_helper.dart';
 import 'package:redux/redux.dart';
 import './redux/redux_store.dart';
-import './services/navigation/navigation_locator.dart';
+import 'services/navigation_locator.dart';
 import 'common/configuration.dart';
 import 'common/enums.dart';
 import 'common/localization/localization.dart';
@@ -46,8 +46,8 @@ class _AppState extends State<App> with WidgetsBindingObserver {
   ];
 
   // Store dynamic changeable locale settings here, they change with the system changes
-  String currentDefaultSystemLocale;
-  List<Locale> currentSystemLocales;
+  late String currentDefaultSystemLocale;
+  late List<Locale> currentSystemLocales;
 
   Locale setLocale(AppState state, BuildContext context) {
     Locale _locale = Locale("tr", "TR");
@@ -67,7 +67,7 @@ class _AppState extends State<App> with WidgetsBindingObserver {
 
   // Here we read the current locale values
   void setCurrentValues() {
-    currentSystemLocales = WidgetsBinding.instance.window.locales;
+    currentSystemLocales = WidgetsBinding.instance!.window.locales;
     currentDefaultSystemLocale = Platform.localeName;
   }
 
@@ -75,13 +75,13 @@ class _AppState extends State<App> with WidgetsBindingObserver {
   void initState() {
     super.initState();
 
-    WidgetsBinding.instance.addObserver(this);
+    WidgetsBinding.instance!.addObserver(this);
     setCurrentValues();
     //CommonHelper.navigationService = locator<NavigationService>();
   }
 
   @override
-  void didChangeLocales(List<Locale> locale) {
+  void didChangeLocales(List<Locale>? locale) {
     // This is run when system locales are changed
     super.didChangeLocales(locale);
     // Update state with the new values and redraw controls
@@ -92,7 +92,7 @@ class _AppState extends State<App> with WidgetsBindingObserver {
 
   @override
   void dispose() {
-    WidgetsBinding.instance.removeObserver(this);
+    WidgetsBinding.instance!.removeObserver(this);
 
     super.dispose();
   }
@@ -139,7 +139,7 @@ class _AppState extends State<App> with WidgetsBindingObserver {
           return MaterialApp(
             navigatorKey: AppStateHelper.navigationService.navigatorKey,
             debugShowCheckedModeBanner: false,
-            title: Configuration.environment == EnumsEnvironment.Test ? "Koç Diyalog Test" : "Koç Diyalog",
+            title: Configuration.environment == EnumsEnvironment.Test ? "Test" : "Prod",
             theme: basicTheme(),
             localizationsDelegates: [
               Localization.delegete,

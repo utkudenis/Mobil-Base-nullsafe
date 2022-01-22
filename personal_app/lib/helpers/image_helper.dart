@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 Widget imageAsset(
   name, {
-  Color color,
-  double width,
-  double height,
-  double scale,
+  required Color color,
+  required double width,
+  required double height,
+  required double scale,
 }) {
   return Image.asset(
     name,

@@ -8,10 +8,10 @@ class CustomNotificationMessage extends StatefulWidget {
   final FToast fToast;
   final String title;
   final String message;
-  final Widget icon;
+  final Widget? icon;
   final Widget notificationContent;
 
-  CustomNotificationMessage(this.fToast, {this.title = '', this.message = '', this.icon, this.notificationContent});
+  CustomNotificationMessage(this.fToast, {this.title = '', this.message = '', this.icon, required this.notificationContent});
 
   @override
   _CustomNotificationMessageState createState() => _CustomNotificationMessageState();
@@ -38,7 +38,7 @@ class _CustomNotificationMessageState extends State<CustomNotificationMessage> {
       ),
       child: Row(
         children: [
-          Expanded(flex: 2, child: widget.icon == null ? SizedBox() : widget.icon),
+          Expanded(flex: 2, child: widget.icon == null ? SizedBox() : widget.icon!),
           Expanded(flex: 7, child: widget.notificationContent),
           Expanded(
             flex: 1,

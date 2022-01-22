@@ -5,7 +5,6 @@ import '../../theme/text_styles.dart';
 // Custom Class
 import 'text_area_controller.dart';
 
-
 class ModalTextArea extends StatefulWidget {
   final String hintText;
   final String secondHintText;
@@ -13,18 +12,18 @@ class ModalTextArea extends StatefulWidget {
   final int minLines;
   final int maxLines;
   final String text;
-  final Function(String) onChanged;
+  final Function(String)? onChanged;
 
   final TextAreaController textAreaController;
 
   ModalTextArea({
-    this.hintText,
+    required this.hintText,
     this.autoFocus = false,
     this.minLines = 4,
     this.maxLines = 6,
     this.text = '',
-    this.textAreaController,
-    this.onChanged,
+    required this.textAreaController,
+    required this.onChanged,
     this.secondHintText = "",
   });
 
@@ -33,7 +32,7 @@ class ModalTextArea extends StatefulWidget {
 }
 
 class _ModalTextAreaState extends State<ModalTextArea> {
-  final TextAreaController textAreaController;
+  final TextAreaController? textAreaController;
   // final String text;
 
   bool checkSecondHinttext = false;
@@ -42,7 +41,7 @@ class _ModalTextAreaState extends State<ModalTextArea> {
 
   @override
   Widget build(BuildContext sacontext) {
-    this.textAreaController.clear = () {
+    this.textAreaController!.clear = () {
       _textEditingController.clear();
     };
 
@@ -81,12 +80,12 @@ class _ModalTextAreaState extends State<ModalTextArea> {
               onChanged: (value) {
                 setState(() {
                   if (textAreaController != null) {
-                    textAreaController.currentLength = value.length;
+                    textAreaController!.currentLength = value.length;
                   }
                 });
 
                 if (this.widget.onChanged != null) {
-                  this.widget.onChanged(value);
+                  this.widget.onChanged!(value);
                 }
               },
             )

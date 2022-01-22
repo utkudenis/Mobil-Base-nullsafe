@@ -1,18 +1,17 @@
 // Packages
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 // Style
 import '../../theme/fonts.dart';
 
 class ModalBottomButtons extends StatelessWidget {
   final bool isRightButtonDisabled;
   final bool isLeftButtonDisabled;
-  final Function onLeftClick;
-  final Function onRightClick;
+  final Function? onLeftClick;
+  final Function? onRightClick;
   final String leftButtonText;
   final String rightButtonText;
 
-  const ModalBottomButtons({Key key, this.isLeftButtonDisabled = false, this.isRightButtonDisabled = false, this.onLeftClick, this.onRightClick, @required this.leftButtonText, @required this.rightButtonText}) : super(key: key);
+  const ModalBottomButtons({Key? key, this.isLeftButtonDisabled = false, this.isRightButtonDisabled = false, this.onLeftClick, this.onRightClick, required this.leftButtonText, required this.rightButtonText}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +26,7 @@ class ModalBottomButtons extends StatelessWidget {
             ),
             onPressed: () {
               if (this.onLeftClick != null) {
-                this.onLeftClick();
+                this.onLeftClick!();
               }
             },
           ),
@@ -42,7 +41,7 @@ class ModalBottomButtons extends StatelessWidget {
             ),
             onPressed: () {
               if (this.onRightClick != null && !isRightButtonDisabled) {
-                this.onRightClick();
+                this.onRightClick!();
               }
             },
           )

@@ -9,7 +9,7 @@ class AppState {
 
   AppState({
     // Common
-    @required this.auth,
+    required this.auth,
   });
 
   factory AppState.initial() {

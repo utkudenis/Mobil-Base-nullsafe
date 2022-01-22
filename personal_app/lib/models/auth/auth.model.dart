@@ -1,11 +1,9 @@
-import 'package:meta/meta.dart';
-
 class AuthModel {
   final String userId;
   final String cookie;
 
   const AuthModel({
-    @required this.userId,
-    @required this.cookie,
+    required this.userId,
+    required this.cookie,
   });
 }

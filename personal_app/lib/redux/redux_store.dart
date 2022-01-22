@@ -6,7 +6,7 @@ import './app_state.dart';
 import './app_reducer.dart';
 
 class ReduxStore {
-  static Store<AppState> currentStore;
+  static late Store<AppState> currentStore;
 
   static Store<AppState> getInitialStore() {
     return Store<AppState>(

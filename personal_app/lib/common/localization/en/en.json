@@ -10,6 +10,30 @@
   "minutes_ago": "minutes ago",
   "now": "Now",
   "your_manager": "Your Manager",
+  "Edit": "Edit",
+  "Delete": "Delete",
+  "Save": "Save",
+  "Saving": "Saving",
+  "Saved": "Saved",
+  "More": "More",
+  "Cancel": "Cancel",
+  "Close": "Close",
+  "Exit": "Exit",
+  "Undo": "Undo",
+  "Continue": "Continue",
+  "TextMore": "...more",
+  "Seemore": "More",
+  "TextLess": "less",
+  "All": "All",
+  "ChangedNote":"Changed note",
+  "Support": "Support",
+  "Today": "Today",
+  "Yesterday": "Yesterday",
+  "Activity": "Activity",
+  "Invite": "Invite",
+  "Invited": "Invited",
   "image_picker_done_button_title": "Bitti"
+
+
   
 }

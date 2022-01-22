@@ -32,13 +32,11 @@ class DynamicTextBlue extends StatelessWidget {
   final Locale locale;
   final StrutStyle strutStyle;
   final TextWidthBasis textWidthBasis;
-  final TextHeightBehavior textHeightBehavior;
 
   DynamicTextBlue({
     //DynamicTextHighlighting
-    Key key,
-    this.text,
-    this.highlights,
+    required this.text,
+    required this.highlights,
     this.color = Colors.yellow,
     this.style = const TextStyle(
       color: Colors.black,
@@ -47,27 +45,15 @@ class DynamicTextBlue extends StatelessWidget {
 
     //RichText
     this.textAlign = TextAlign.start,
-    this.textDirection,
+    this.textDirection = TextDirection.ltr,
     this.softWrap = true,
     this.overflow = TextOverflow.clip,
     this.textScaleFactor = 1.0,
-    this.maxLines,
-    this.locale,
-    this.strutStyle,
+    this.maxLines = 3,
+    required this.locale,
+    required this.strutStyle,
     this.textWidthBasis = TextWidthBasis.parent,
-    this.textHeightBehavior,
-  })  : assert(text != null),
-        assert(highlights != null),
-        assert(color != null),
-        assert(style != null),
-        assert(caseSensitive != null),
-        assert(textAlign != null),
-        assert(softWrap != null),
-        assert(overflow != null),
-        assert(textScaleFactor != null),
-        assert(maxLines == null || maxLines > 0),
-        assert(textWidthBasis != null),
-        super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -79,14 +65,11 @@ class DynamicTextBlue extends StatelessWidget {
       return _richText(_normalSpan(text));
     }
     for (int i = 0; i < highlights.length; i++) {
-      if (highlights[i] == null) {
-        assert(highlights[i] != null);
-        return _richText(_normalSpan(text));
-      }
       if (highlights[i].isEmpty) {
-        assert(highlights[i].isNotEmpty);
         return _richText(_normalSpan(text));
       }
+
+      return _richText(_normalSpan(text));
     }
 
     //Main code
@@ -125,7 +108,7 @@ class DynamicTextBlue extends StatelessWidget {
         _highlightsMap.forEach((key, value) => _indexes.add(key));
 
         int _currentIndex = _indexes.reduce(min);
-        String _currentHighlight = text.substring(_currentIndex, _currentIndex + _highlightsMap[_currentIndex].length);
+        String _currentHighlight = text.substring(_currentIndex, _currentIndex + _highlightsMap[_currentIndex]!.length);
 
         if (_currentIndex == _start) {
           _spans.add(_highlightSpan(_currentHighlight));
@@ -185,7 +168,6 @@ class DynamicTextBlue extends StatelessWidget {
       locale: locale,
       strutStyle: strutStyle,
       textWidthBasis: textWidthBasis,
-      textHeightBehavior: textHeightBehavior,
     );
   }
 }

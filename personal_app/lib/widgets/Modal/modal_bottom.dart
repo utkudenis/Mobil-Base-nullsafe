@@ -1,5 +1,4 @@
 // Packages
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 // Helpers
 import '../../helpers/localization_helper.dart';
@@ -15,14 +14,13 @@ import '../spacing.dart';
 import 'text_area_controller.dart';
 
 class ModalBottom extends StatefulWidget {
-  final Widget content;
-  final Widget contentText;
+  final Widget? content;
+  final Widget? contentText;
 
-  final String title;
-  final ShapeBorder shape;
-  final Widget text;
+  final String? title;
+  final Widget? text;
   final String textAreaText;
-  final String textAreaHintText;
+  final String? textAreaHintText;
 
   final int minLines;
   final int maxLines;
@@ -31,29 +29,28 @@ class ModalBottom extends StatefulWidget {
   final bool enableTextArea;
   final bool enableSaveAndCancelButtons;
 
-  final Function onCancel;
-  final Function onSave;
-  final Function(String value) onTextAreaChanged;
+  final Function? onCancel;
+  final Function? onSave;
+  final Function(String value)? onTextAreaChanged;
 
   final TextAreaController textAreaController;
 
   ModalBottom({
     this.title,
     this.content,
-    this.shape,
-    this.horizontalPadding,
+    required this.horizontalPadding,
     this.text,
     this.enableTextArea = false,
-    this.textAreaText,
+    this.textAreaText = "",
     this.textAreaHintText,
-    this.textAreaController,
+    required this.textAreaController,
     this.onTextAreaChanged,
     this.enableSaveAndCancelButtons = false,
     this.minLines = 2,
     this.maxLines = 3,
     this.onCancel,
     this.onSave,
-    this.height,
+    required this.height,
     this.contentText,
   });
 
@@ -84,7 +81,7 @@ class _ModalBottomState extends State<ModalBottom> {
                   ? SizedBox()
                   : Column(
                       children: [
-                        ModalTitle(widget.title),
+                        ModalTitle(widget.title ?? ""),
                         Spacing(
                           height: 24,
                         ),
@@ -100,14 +97,14 @@ class _ModalBottomState extends State<ModalBottom> {
                       autoFocus: true,
                       text: widget.textAreaText,
                       textAreaController: textAreaController,
-                      hintText: widget.textAreaHintText,
+                      hintText: widget.textAreaHintText ?? "",
                       onChanged: (String value) {
                         setState(() {
                           textAreaController.currentLength = value.length;
                         });
 
                         if (widget.onTextAreaChanged != null) {
-                          widget.onTextAreaChanged(value);
+                          widget.onTextAreaChanged!(value);
                         }
                       },
                     )
@@ -115,13 +112,13 @@ class _ModalBottomState extends State<ModalBottom> {
             ],
           ),
         ),
-        (textAreaController != null && widget.enableTextArea) ? TextFieldInformation(textAreaController) : Container(),
+        (widget.enableTextArea) ? TextFieldInformation(textAreaController) : Container(),
         widget.enableSaveAndCancelButtons
             ? ModalBottomButtons(
                 isRightButtonDisabled: !textAreaController.isOK,
                 onLeftClick: () {
                   ModalHelper.closeModals(context);
-                  widget.onCancel();
+                  widget.onCancel!();
                 },
                 onRightClick: widget.onSave,
                 leftButtonText: localize(context, 'Cancel'),

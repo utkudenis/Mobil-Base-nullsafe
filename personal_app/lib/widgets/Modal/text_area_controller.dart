@@ -14,12 +14,12 @@ class TextAreaController {
   bool get isOK {
     bool result = true;
 
-    if ((minLength != null && currentLength < minLength) || (maxLength != null && currentLength > maxLength)) {
+    if ((currentLength < minLength) || (currentLength > maxLength)) {
       result = false;
     }
 
     return result;
   }
 
-  TextAreaController({this.maxLength, this.minLength, this.currentLength = 0, this.clear});
+  TextAreaController({this.maxLength = 500, this.minLength = 0, this.currentLength = 0, required this.clear});
 }

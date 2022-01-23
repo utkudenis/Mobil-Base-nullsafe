@@ -34,7 +34,7 @@ class AppStateHelper {
     // Set initial state datas.
     await StoreProvider.of<AppState>(context).dispatch(UserLogoutAction());
 
-    /// Makes api call to delete all data about user (notification, cookies, etc.).
-    await AuthHelper.deleteDeviceFromServer();
+    // /// Makes api call to delete all data about user (notification, cookies, etc.).
+    // await AuthHelper.deleteDeviceFromServer();
   }
 }

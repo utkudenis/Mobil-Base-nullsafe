@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
     <channel>
-        <title>Falsepeti Update</title>
+        <title>Falsepeti Yeni Version</title>
         <item>
-            <title>Version 2.0.0</title>
-            <description>Ödeme sistemlerindeki sorunlar çözüldü</description>
-            <pubDate>Tue, 18 Jun 2022 12:00:00 +0000</pubDate>
-            <enclosure url="https://play.google.com/store/apps/details?id=com.falsepeti.falsepeti" sparkle:version="2.0.0" sparkle:os="android" />
+            <title>Version 3.0.0</title>
+            <description>Yeni App Yayında</description>
+            <pubDate>Thu, 3 Feb 2022 12:00:00 +0000</pubDate>
+            <enclosure url="https://play.google.com/store/apps/details?id=com.falsepeti.falsepeti" sparkle:version="3.0.0" sparkle:os="android" />
         </item>
         <item>
             <title>Version 3.0.0</title>
-            <description>Ödeme sistemlerindeki sorunlar çözüldü</description>
-            <pubDate>Tue, 18 Jun 2022 12:00:00 +0000</pubDate>
+            <description>Yeni App Yayında</description>
+            <pubDate>Thu, 3 Feb 2022 12:00:00 +0000</pubDate>
             <enclosure url="https://apps.apple.com/us/app/fal-sepeti-uzman-falc%C4%B1lar/id1177421727" sparkle:version="3.0.0" sparkle:os="iOS" />           
         </item>
     </channel>
